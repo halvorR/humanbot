@@ -43,7 +43,9 @@ a {
 	height:270px;
 	width:430px;
 	border:1px solid #ACD8F0;
-	overflow:auto; }
+	overflow:auto;
+	word-wrap:break-word;
+	}
  
 #usermsg {
 	width:395px;
