@@ -16,7 +16,6 @@ if(!isset($_SESSION['name'])){
 else{
 if(isset($_GET['logout'])){	
 	
-	
 	//Clear file
 	$fp = fopen("log.html", 'w');
 	fclose($fp);
@@ -30,10 +29,8 @@ if(isset($_GET['logout'])){
 	echo '<script>location.reload(true);</script>'; //Show login form again
 }
 
-
 ?>
 <div id="wrapper">
-	<!-- <div id = "bots"><?php// echo $_SESSION['navn1']; ?></div> -->
 	<div id="menu">
 		<p class="welcome">Velkommen, <b><?php echo $_SESSION['name']; ?></b></p>
 		<p class="logout"><a id="exit" href="#">Logg ut</a></p>
@@ -53,7 +50,17 @@ if(isset($_GET['logout'])){
 		<input name="usermsg" type="text" id="usermsg" size="63" />
 		<input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
 	</form>
+
 </div>
+	<!-- For å velge bot -->
+	<div id="velgBot">
+		<form action="valg.php" action="post">
+			<p>Hvem tror <span id="du">DU</span> er en bot?</p>
+			<input type="submit" value="Bottelars" name="bot1">
+			<input type="submit" value="Larsebot" name="bot2">	
+		</form>
+	</div>
+	<div class="clear"></div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">
 // jQuery Document
