@@ -54,10 +54,11 @@ if(isset($_GET['logout'])){
 </div>
 	<!-- For å velge bot -->
 	<div id="velgBot">
-		<form action="valg.php" action="post">
+		<form action="valg.php" action="get">
 			<p>Hvem tror <span id="du">DU</span> er en bot?</p>
-			<input type="submit" value="Bottelars" name="bot1">
-			<input type="submit" value="Larsebot" name="bot2">	
+			<input type="radio" value="Bottelars" name="bot"> Bottelars
+			<input type="radio" value="Larsebot" name="bot"> Larsebot
+			<input type="submit" value="Registrer valg" name="registrer">
 		</form>
 	</div>
 	<div class="clear"></div>
