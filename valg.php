@@ -13,6 +13,13 @@
 	<?php 
 		if($_GET['bot']) {
 			echo "<p>Du valgte ".$_GET['bot']."</p>";
+
+			// Skriver til svar.html
+			$f = fopen("svar.html", "w");
+			$skriv = "Bruker: ". $_SESSION['name']." = ". $_GET['bot'];
+			fwrite($f, $skriv);
+			fclose($f);
+
 		} 
 	?>
 </body>
