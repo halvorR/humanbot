@@ -8,6 +8,7 @@
 <meta charset="utf-8">
 <link type="text/css" rel="stylesheet" href="style.css" />
 </head>
+<body>
 
 <?php
 if(!isset($_SESSION['name'])){
@@ -31,32 +32,25 @@ if(isset($_GET['logout'])){
 
 ?>
 <div id="wrapper">
-	<div id="hvemerdet">
-	<?php
-		include "botfasit.php";
-		if ($rogerbot >0) {
-			echo "Det er Roger som er bot";
-		} 
-		?>
-	</div>
-	<div id = "bots">
-		<?php
-			if(file_exists("adminlog.html") && filesize("adminlog.html") > 0){
-			$handle = fopen("adminlog.html", "r");
-			$contents = fread($handle, filesize("adminlog.html"));
-			fclose($handle);
-			
-			echo $contents;
-		}
-			if(file_exists("adminlog2.html") && filesize("adminlog2.html") > 0){
-			$handle = fopen("adminlog2.html", "r");
-			$contents = fread($handle, filesize("adminlog2.html"));
-			fclose($handle);
-			
-			echo $contents;
-		}
-		?>
-	</div>
+	<aside id="infobox">
+		<div id = "bots">
+			<?php
+				$file = file("adminlog.html");
+				echo $file[0];
+				$file2 = file("adminlog2.html");
+				echo $file2[0];
+			}
+			?>
+		</div>
+		<!-- For å velge bot -->
+		<div id="velgBot">
+			<form action="valg.php" action="get">
+				<p>Hvem tror <span id="du">DU</span> er en bot?</p>
+				<input type="submit" value="<?php $file = file("adminlog.html"); echo $file[1]; ?>" name="bot">
+				<input type="submit" value="<?php $file = file("adminlog2.html"); echo $file[1]; ?>" name="bot">
+		</div>
+	</aside>
+	<div id="insideWrapper">
 	<div id="menu">
 		<p class="welcome">Velkommen, <b><?php echo $_SESSION['name']; ?></b></p>
 		<p class="logout"><a id="exit" href="#">Logg ut</a></p>
@@ -78,16 +72,7 @@ if(isset($_GET['logout'])){
 	</form>
 
 </div>
-	<!-- For å velge bot -->
-	<div id="velgBot">
-		<form action="valg.php" action="get">
-			<p>Hvem tror <span id="du">DU</span> er en bot?</p>
-			<input type="radio" value=<?php $file = 'adminlog.php'; echo $file[1];?> name="bot"> <?php $file = 'adminlog.php'; echo $file[1];?>
-			<input type="radio" value="Larsebot" name="bot"> Larsebot
-			<input type="submit" value="Registrer valg" name="registrer">
-		</form>
-	</div>
-	<div class="clear"></div>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">
 // jQuery Document
@@ -150,8 +135,6 @@ $(document).ready(function(){
 	});
 });
 </script>
-<?php
-}
-?>
+</div>
 </body>
 </html>
