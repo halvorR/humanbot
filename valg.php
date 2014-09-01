@@ -16,10 +16,11 @@
 
 			// Skriver til svar.html
 			$f = fopen("svar.html", "a");
-			$skriv = "Bruker: ". $_SESSION['name']." = ". $_GET['bot'] . "\n";
+			$skriv = "<p>Bruker: ". $_SESSION['name']." = ". $_GET['bot'] . "</p>\n";
 			fwrite($f, $skriv);
 			fclose($f);
 
+			session_destroy();
 		} 
 	?>
 </body>

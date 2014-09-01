@@ -6,6 +6,7 @@
 <img src="humanBot.png">
 <title>HumanBot</title>
 <meta charset="utf-8">
+<meta http-equiv="refresh" content="10">
 <link type="text/css" rel="stylesheet" href="style.css" />
 </head>
 
