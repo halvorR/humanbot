@@ -15,8 +15,8 @@
 			echo "<p>Du valgte ".$_GET['bot']."</p>";
 
 			// Skriver til svar.html
-			$f = fopen("svar.html", "w");
-			$skriv = "Bruker: ". $_SESSION['name']." = ". $_GET['bot'];
+			$f = fopen("svar.html", "a");
+			$skriv = "Bruker: ". $_SESSION['name']." = ". $_GET['bot'] . "\n";
 			fwrite($f, $skriv);
 			fclose($f);
 
