@@ -33,12 +33,12 @@ if(isset($_GET['logout'])){
 ?>
 <div id="wrapper">
 	<aside id="infobox">
+	<div id="menu">
+		<p class="welcome">Du er logget inn som: <b><?php echo $_SESSION['name']; ?></b></p>
+		<p class="logout"><a id="exit" href="#">Logg ut</a></p>
+	</div>	
 		<div id = "bots">
 			<?php
-				$file = file("adminlog.html");
-				echo $file[0];
-				$file2 = file("adminlog2.html");
-				echo $file2[0];
 			}
 			?>
 		</div>
@@ -46,16 +46,11 @@ if(isset($_GET['logout'])){
 		<div id="velgBot">
 			<form action="valg.php" action="get">
 				<p>Hvem tror <span id="du">DU</span> er en bot?</p>
-				<input type="submit" value="<?php $file = file("adminlog.html"); echo $file[1]; ?>" name="bot">
-				<input type="submit" value="<?php $file = file("adminlog2.html"); echo $file[1]; ?>" name="bot">
+				<input type="submit" value="<?php $file = file("adminlog.html"); echo $file[1]; ?>" name="rogerBotKnapp" class="botGuess">
+				<input type="submit" value="<?php $file = file("adminlog2.html"); echo $file[1]; ?>" name="halvorBotKnapp" class="botGuess">
 		</div>
 	</aside>
 	<div id="insideWrapper">
-	<div id="menu">
-		<p class="welcome">Velkommen, <b><?php echo $_SESSION['name']; ?></b></p>
-		<p class="logout"><a id="exit" href="#">Logg ut</a></p>
-		<div style="clear:both"></div>
-	</div>	
 	<div id="chatbox"><?php
 	if(file_exists("log.html") && filesize("log.html") > 0){
 		$handle = fopen("log.html", "r");
@@ -65,11 +60,12 @@ if(isset($_GET['logout'])){
 		echo $contents;
 	}
 	?></div>
-	
+	<div id="inputfelt">
 	<form name="message" method="post">
-		<input name="usermsg" type="text" id="usermsg" size="63" />
+		<textarea name="usermsg" type="text" id="usermsg" size="63" resize="none"></textarea>
 		<input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
 	</form>
+	</div>
 
 </div>
 

@@ -47,30 +47,47 @@ a {
 #chatbox {
 	float:right;
 	text-align:left;
-	margin-right: 25px;
+	margin-right: 10px;
 	margin-bottom: 10px;
+	margin-top: 10px;
 	padding:10px;
 	background:#fff;
-	height:310px;
+	height:330px;
 	width:530px;
 	border:1px solid #ACD8F0;
 	overflow:auto;
 	word-wrap:break-word;
 	}
- 
+#inputfelt {
+}
 #usermsg {
-	width:495px;
-	border:1px solid #ACD8F0; }
- 
+	width:478px;
+	height: 40px;
+	margin-left: 28px;
+	border:1px solid #ACD8F0;
+	padding-left:0;
+	resize: none;
+}
+#submitmsg {
+	float: right;
+	margin-right: 10px;
+	height: 46px;
+	width: 60px;
+}
 #submit { width: 60px; }
  
 .error { color: #ff0000; }
  
 #menu { padding:12.5px 25px 12.5px 25px; }
  
-.welcome { float:left; }
+.welcome {
+	float:left;
+	margin-bottom: 5px;
+}
 
-.logout { float:right; }
+.logout {
+	float:right;
+}
  
 .msgln { margin:0 0 2px 0; }
  
@@ -79,13 +96,12 @@ a {
 	padding-bottom:25px;
 	background:#EBF4FB;
 	width:300px;
-	border:1px solid #ACD8F0;
+	border-top:1px solid #ACD8F0;
 }
 
 #velgBot p {
 	margin:10px;
 	font-size: 20px;
-	float: right;
 
 }
 
@@ -101,4 +117,16 @@ a {
 #insideWrapper {
 	width: 600px;
 	float: right;
+}
+#bots {
+	text-align: left;
+	font-size: 1.2em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.botGuess {
+	width: 120px;
+	height: 40px;
+	margin: 4px;
+	font-size: 1.1em; 
 }
