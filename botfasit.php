@@ -1,1 +1,1 @@
-<?php $rogerbot =  1; ?>
+<?php $rogerbot = 0; ?>
