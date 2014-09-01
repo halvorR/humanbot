@@ -7,6 +7,7 @@
 <title>HumanBot</title>
 <meta charset="utf-8">
 <link type="text/css" rel="stylesheet" href="style.css" />
+<script type="text/javascript" src="timer.js"></script>
 </head>
 <body>
 
@@ -34,7 +35,7 @@ if(isset($_GET['logout'])){
 <div id="wrapper">
 	<aside id="infobox">
 	<div id="menu">
-		<p class="welcome">Du er logget inn som: <b><?php echo $_SESSION['name']; ?></b></p>
+		<p class="welcome">HEI <b><?php echo $_SESSION['name']; ?></b></p>
 		<p class="logout"><a id="exit" href="#">Logg ut</a></p>
 	</div>	
 		<div id = "bots">
