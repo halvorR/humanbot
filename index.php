@@ -37,6 +37,8 @@ if(isset($_GET['logout'])){
 		if ($rogerbot >0) {
 			echo "Det er Roger som er bot";
 		}
+		$file = "adminlog.php";
+		echo $file[1];
 		?>
 	</div>
 	<div id = "bots">
