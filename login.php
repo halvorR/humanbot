@@ -12,13 +12,17 @@ session_start();
 <img src="humanBot.png" alt="Bilde">
 
 	<div id="loginform">
+
+		<h1>Touringtest</h1>
+		<p>Her skal du forsøke å finne ut hvem av de to personene <br/>du mener er bot, og hvem du tror er menneske.</p>
+		<p>Det eneste du trenger å gjøre er å velge deg et kallenavn,<br/> og dermed er det bare å spørre i vei!</p>
+
+	<h3>Logg deg inn her!</h3>
 	<form id="login" action="" method="post">
-		<p>Skriv inn et navn for å chatte med HumanBot!:</p>
 		<label for="name">Brukernavn:</label>
 		<input type="text" name="name" id="name" />
 		<input type="submit" name="enter" id="enter" value="Logg inn" />
 	</form>
-
 
 <?php
 
