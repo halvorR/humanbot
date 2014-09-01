@@ -32,6 +32,32 @@ if(isset($_GET['logout'])){
 
 ?>
 <div id="wrapper">
+	<div id="hvemerdet">
+	<?php
+		include "botfasit.php";
+		if ($rogerbot >0) {
+			echo "Det er Roger som er bot";
+		}
+		?>
+	</div>
+	<div id = "bots">
+		<?php
+			if(file_exists("adminlog.html") && filesize("adminlog.html") > 0){
+			$handle = fopen("adminlog.html", "r");
+			$contents = fread($handle, filesize("adminlog.html"));
+			fclose($handle);
+			
+			echo $contents;
+		}
+			if(file_exists("adminlog2.html") && filesize("adminlog2.html") > 0){
+			$handle = fopen("adminlog2.html", "r");
+			$contents = fread($handle, filesize("adminlog2.html"));
+			fclose($handle);
+			
+			echo $contents;
+		}
+		?>
+	</div>
 	<div id="menu">
 		<p class="welcome">Velkommen, <b><?php echo $_SESSION['name']; ?></b></p>
 		<p class="logout"><a id="exit" href="#">Logg ut</a></p>
