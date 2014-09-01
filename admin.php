@@ -1,3 +1,4 @@
+<?session_start();?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,7 +8,6 @@
 <link type="text/css" rel="stylesheet" href="style.css" />
 </head>
 <?php
-session_start();
 
 	echo'
 	<div id="loginform">
