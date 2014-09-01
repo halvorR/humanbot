@@ -36,9 +36,7 @@ if(isset($_GET['logout'])){
 		include "botfasit.php";
 		if ($rogerbot >0) {
 			echo "Det er Roger som er bot";
-		}
-		$file = "adminlog.php";
-		echo $file[1];
+		} 
 		?>
 	</div>
 	<div id = "bots">
@@ -84,7 +82,7 @@ if(isset($_GET['logout'])){
 	<div id="velgBot">
 		<form action="valg.php" action="get">
 			<p>Hvem tror <span id="du">DU</span> er en bot?</p>
-			<input type="radio" value="Bottelars" name="bot"> Bottelars
+			<input type="radio" value=<?php $file = 'adminlog.php'; echo $file[1];?> name="bot"> <?php $file = 'adminlog.php'; echo $file[1];?>
 			<input type="radio" value="Larsebot" name="bot"> Larsebot
 			<input type="submit" value="Registrer valg" name="registrer">
 		</form>

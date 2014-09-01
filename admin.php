@@ -74,7 +74,7 @@ if(isset($_POST['enter2'])){
 		}
 		
 		$fp = fopen("adminlog2.html", 'a');
-		fwrite($fp, "<div class='adminlog2' id=" . time() ."><i>". $_SESSION['name2'] ." er chattebot 2!</i><br></div>");
+		fwrite($fp, "<div class='adminlog2' id=" . time() ."><i>". $_SESSION['name2'] ." er chattebot 2!</i><br></div> \r\n". $_SESSION['name2']);
 		fclose($fp);
 	}
 	else{
