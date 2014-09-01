@@ -46,8 +46,8 @@ if(isset($_GET['logout'])){
 		<div id="velgBot">
 			<form action="valg.php" action="get">
 				<p>Hvem tror <span id="du">DU</span> er en bot?</p>
-				<input type="submit" value="<?php $file = file("adminlog.html"); echo $file[1]; ?>" name="rogerBotKnapp" class="botGuess">
-				<input type="submit" value="<?php $file = file("adminlog2.html"); echo $file[1]; ?>" name="halvorBotKnapp" class="botGuess">
+				<input type="submit" value="<?php $file = file("adminlog.html"); echo $file[1]; ?>" name="bot1" class="botGuess">
+				<input type="submit" value="<?php $file = file("adminlog2.html"); echo $file[1]; ?>" name="bot2" class="botGuess">
 		</div>
 	</aside>
 	<div id="insideWrapper">
