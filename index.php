@@ -44,7 +44,7 @@ if(isset($_GET['logout'])){
 		</div>
 		<!-- For å velge bot -->
 		<div id="velgBot">
-			<form action="valg.php" action="get">
+			<form action="valg.php" method="get">
 				<p>Hvem tror <span id="du">DU</span> er en bot?</p>
 				<input type="submit" value="<?php $file = file("adminlog.html"); echo $file[1]; ?>" name="rogerBotKnapp" class="botGuess">
 				<input type="submit" value="<?php $file = file("adminlog2.html"); echo $file[1]; ?>" name="halvorBotKnapp" class="botGuess">
@@ -61,7 +61,7 @@ if(isset($_GET['logout'])){
 	}
 	?></div>
 	<div id="inputfelt">
-	<form name="message" method="post">
+	<form action="" name="message" method="post">
 		<textarea name="usermsg" type="text" id="usermsg" size="63" resize="none"></textarea>
 		<input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
 	</form>
@@ -71,6 +71,14 @@ if(isset($_GET['logout'])){
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">
+
+function test() {
+	var s = $('#chatbox');
+    s.scrollTop(
+        s[0].scrollHeight - s.height()
+    );
+}
+
 // jQuery Document
 $(document).ready(function(){
 	//If user submits the form (Enter key or submit)
@@ -96,8 +104,10 @@ $(document).ready(function(){
 	
 	//Load the file containing the chat log
 	function loadLog(){		
-		var oldscrollHeight = $("#chatbox").prop("scrollHeight") - 20;	
+		var oldscrollHeight = $("#chatbox").prop("scrollHeight") - 20;
 		
+		test();
+
 		$.ajax({
 			url: "log.html",
 			cache: false,
@@ -123,7 +133,7 @@ $(document).ready(function(){
 	
 	
 	setInterval (loadLog, 70);	//Reload file every 70ms
-	
+
 	//If user wants to end session
 	$("#exit").click(function(){
 		var exit = confirm("Sikker på at du ikke vil prate med HumanBot?");
