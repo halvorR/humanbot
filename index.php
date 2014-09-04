@@ -7,6 +7,7 @@
 <title>HumanBot</title>
 <meta charset="utf-8">
 <link type="text/css" rel="stylesheet" href="style.css" />
+<script type="text/javascript" src="timer.js"></script>
 </head>
 <body>
 
@@ -34,7 +35,7 @@ if(isset($_GET['logout'])){
 <div id="wrapper">
 	<aside id="infobox">
 	<div id="menu">
-		<p class="welcome">Du er logget inn som: <b><?php echo $_SESSION['name']; ?></b></p>
+		<p class="welcome">HEI <b><?php echo $_SESSION['name']; ?></b></p>
 		<p class="logout"><a id="exit" href="#">Logg ut</a></p>
 	</div>	
 		<div id = "bots">
@@ -46,8 +47,8 @@ if(isset($_GET['logout'])){
 		<div id="velgBot">
 			<form action="valg.php" action="get">
 				<p>Hvem tror <span id="du">DU</span> er en bot?</p>
-				<input type="submit" value="<?php $file = file("adminlog.html"); echo $file[1]; ?>" name="rogerBotKnapp" class="botGuess">
-				<input type="submit" value="<?php $file = file("adminlog2.html"); echo $file[1]; ?>" name="halvorBotKnapp" class="botGuess">
+				<input type="submit" value="<?php $file = file("adminlog.html"); echo $file[1]; ?>" name="bot1" class="botGuess">
+				<input type="submit" value="<?php $file = file("adminlog2.html"); echo $file[1]; ?>" name="bot2" class="botGuess">
 		</div>
 	</aside>
 	<div id="insideWrapper">
@@ -72,12 +73,14 @@ if(isset($_GET['logout'])){
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">
 
-function test() {
+
+function scrollToBottomChat() {
 	var s = $('#chatbox');
     s.scrollTop(
         s[0].scrollHeight - s.height()
     );
 }
+
 
 // jQuery Document
 $(document).ready(function(){
@@ -106,7 +109,7 @@ $(document).ready(function(){
 	function loadLog(){		
 		var oldscrollHeight = $("#chatbox").prop("scrollHeight") - 20;
 
-		test();
+		scrollToBottomChat();
 		
 		$.ajax({
 			url: "log.html",
