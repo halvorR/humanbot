@@ -71,6 +71,14 @@ if(isset($_GET['logout'])){
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">
+
+function test() {
+	var s = $('#chatbox');
+    s.scrollTop(
+        s[0].scrollHeight - s.height()
+    );
+}
+
 // jQuery Document
 $(document).ready(function(){
 	//If user submits the form (Enter key or submit)
@@ -96,7 +104,9 @@ $(document).ready(function(){
 	
 	//Load the file containing the chat log
 	function loadLog(){		
-		var oldscrollHeight = $("#chatbox").prop("scrollHeight") - 20;	
+		var oldscrollHeight = $("#chatbox").prop("scrollHeight") - 20;
+
+		test();
 		
 		$.ajax({
 			url: "log.html",
